@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Chat</title>
+    <style>
+        /* Basic styling for chat interface */
+        body { font-family: Arial, sans-serif; }
+        .chat-box { width: 50%; margin: 0 auto; }
+        .message { padding: 10px; margin: 5px; border-radius: 5px; }
+        .patient { background-color: #e1ffc7; text-align: left; }
+        .bot { background-color: #c7dfff; text-align: left; }
+        .timestamp { font-size: 0.8em; color: gray; }
+        .request-output { margin-top: 20px; color: red; }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <h2>Chat with your Health Assistant</h2>
+        <div class="messages">
+            {% for message in messages %}
+                <div class="message {{ message.sender }}">
+                    <p>{{ message.text }}</p>
+                    <div class="timestamp">{{ message.timestamp }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="message" placeholder="Type your message here..." required>
+            <button type="submit">Send</button>
+        </form>
+        <!-- Output for requests to doctor -->
+        {% if request_output %}
+            <div class="request-output">
+                <p>{{ request_output }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+{% if entities %}
+    <div class="entities">
+        <h3>Extracted Entities:</h3>
+        <ul>
+            {% for label, text in entities.items %}
+                <li>{{ label }}: {{ text }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
