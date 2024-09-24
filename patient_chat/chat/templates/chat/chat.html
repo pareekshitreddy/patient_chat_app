@@ -32,15 +32,12 @@
         </form>
         <!-- Output for requests to doctor -->
         {% if request_output %}
-            <div class="request-output">
-                <p>{{ request_output }}</p>
-            </div>
-        {% endif %}
+        <div class="request-output">
+            <p><strong>Note:</strong> {{ request_output }}</p>
+        </div>
+    {% endif %}
     </div>
-</body>
-</html>
-
-{% if entities %}
+    {% if entities %}
     <div class="entities">
         <h3>Extracted Entities:</h3>
         <ul>
@@ -49,4 +46,8 @@
             {% endfor %}
         </ul>
     </div>
-{% endif %}
+    {% endif %}
+</body>
+</html>
+
+
