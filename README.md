@@ -81,12 +81,14 @@ This Django application allows a patient to interact with an AI bot regarding th
 
 ```bash
 git clone https://github.com/yourusername/patient-chat-application.git
-cd patient-chat-application 
 ```
+
 
 ### 2. Create a Virtual Environment
 ```bash
 python3 -m venv venv
+```
+```bash
 source venv/bin/activate 
 ```
 
