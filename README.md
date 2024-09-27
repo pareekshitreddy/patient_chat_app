@@ -169,34 +169,6 @@ Open your web browser and navigate to [http://localhost:8000/](http://localhost:
 - **Request Confirmation:** If you request an appointment or treatment change, the bot will confirm by saying, “I will convey your request to Dr. [Doctor's Name].”
 - **Request Summary:** A summary of your request will be displayed next to the chat box for your review.
 
-### Understanding Conversation Summaries
-- **Live Summaries:** The application provides live summaries of the conversation, highlighting key points.
-- **Medical Insights:** Important medical insights extracted from the conversation are displayed for your reference.
-
-## Explanation of Features
-
-### Patient Profile
-- The application uses a predefined patient profile for simplicity.
-- Patient attributes are utilized by the AI bot to provide personalized responses.
-
-### AI Bot Functionality
-- **Health-Related Focus:** The bot is programmed to engage only in health-related conversations.
-- **Sensitive Topics Filtering:** Automatically filters out any unrelated or sensitive topics to maintain professionalism.
-- **Memory Optimization:** Manages long conversations efficiently without losing important information.
-
-### Appointment and Treatment Requests
-- **Detection:** The bot detects phrases indicating a request to change appointments or treatments.
-- **Response:** Confirms the request and assures the patient that it will be conveyed to the doctor.
-- **Request Output:** Generates a concise summary of the request for patient review.
-
-### Entity Extraction
-- Utilizes language models to extract key entities from the conversation.
-- Extracted entities (e.g., medications, symptoms) are stored in a knowledge graph for future reference.
-
-### Knowledge Graph Integration
-- **Neo4j Database:** Stores patient data and extracted entities.
-- **Dynamic Queries:** The AI bot can retrieve additional patient information during the conversation.
-
 ## Conclusion
 This Patient Chat Application serves as a functional prototype that meets the specified requirements. It allows for seamless interaction between a patient and an AI bot, focusing on health-related conversations while efficiently managing requests and information.
 
