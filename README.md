@@ -13,7 +13,6 @@ This Django application allows a patient to interact with an AI bot regarding th
 - [Setup Instructions](#setup-instructions)
 - [Running the Application](#running-the-application)
 - [Usage Instructions](#usage-instructions)
-- [Explanation of Features](#explanation-of-features)
 - [Conclusion](#conclusion)
 
 ## Features
