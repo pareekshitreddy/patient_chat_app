@@ -1,2 +1,9 @@
 django
-requests
+psycopg2
+python-dotenv
+neo4j
+langchain
+langchain-google-genai
+dateparser
+python-dateutil
+re

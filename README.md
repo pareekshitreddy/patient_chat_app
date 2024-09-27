@@ -36,6 +36,7 @@ This Django application allows a patient to interact with an AI bot regarding th
     - Example: “Can we reschedule the appointment to next Friday at 3 PM?”
   - Responds with: “I will convey your request to Dr. [Doctor's Name].”
   - Outputs a message next to the chat box for review by the patient, summarizing the request.
+  - Takes in requests and stores them to be reviewed by the staff later.
 
 - **Entity Extraction**:
   - Extracts key entities from the conversation.
@@ -47,14 +48,6 @@ This Django application allows a patient to interact with an AI bot regarding th
 - **Knowledge Graph Integration**:
   - Integrates a Neo4j Knowledge Graph to dynamically query additional data about the patient.
   - Retrieves information like lab tests, doctor notes, weight, vital signs, and medications.
-
-- **Conversation Summaries and Medical Insights**:
-  - Generates live conversation summaries.
-  - Extracts medical insights from ongoing conversations.
-
-- **LLM Agnostic Design**:
-  - Allows different language models to be easily swapped out by setting environment variables.
-  - Utilizes LangChain for LLM and Retrieval-Augmented Generation (RAG).
 
 ## Assumptions
 
@@ -73,10 +66,15 @@ This Django application allows a patient to interact with an AI bot regarding th
 
 - **Python**: Version 3.7 or higher.
 - **Django**: Version 3.x or higher.
-- **PostgreSQL**: For the database.
+- **MySQL**: For the database.
 - **Neo4j**: knowledge graph feature.
 - **Gemini API Key**: For the LLM model.
 - **LangChain and LangChain-Google-GenAI**: For language model integration.
+
+**Additional Requirements:**
+
+- Ensure that the **MySQL server** is installed and running on your local machine or accessible remotely.
+- Ensure that **Neo4j Desktop** is installed, and the Neo4j server and the created database is running.
 
 ## Setup Instructions
 
@@ -198,10 +196,6 @@ Open your web browser and navigate to [http://localhost:8000/](http://localhost:
 ### Knowledge Graph Integration
 - **Neo4j Database:** Stores patient data and extracted entities.
 - **Dynamic Queries:** The AI bot can retrieve additional patient information during the conversation.
-
-## Conversation Summaries and Medical Insights
-- Provides real-time summaries to help the patient keep track of the discussion.
-- Highlights important medical information for better understanding and decision-making.
 
 ## Conclusion
 This Patient Chat Application serves as a functional prototype that meets the specified requirements. It allows for seamless interaction between a patient and an AI bot, focusing on health-related conversations while efficiently managing requests and information.
