@@ -47,6 +47,19 @@
         </ul>
     </div>
     {% endif %}
+    {% comment %} <div class="conversation-summary">
+        {% if conversation_summary %}
+            <h3>Conversation Summary</h3>
+            <p>{{ conversation_summary }}</p>
+        {% endif %}
+    </div>
+    
+    <div class="medical-insights">
+        {% if medical_insights %}
+            <h3>Medical Insights</h3>
+            <p>{{ medical_insights }}</p>
+        {% endif %}
+    </div> {% endcomment %}
 </body>
 </html>
 
