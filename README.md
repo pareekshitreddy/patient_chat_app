@@ -99,7 +99,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## 4. Set Up Environment Variables
+### 4. Set Up Environment Variables
 
 Create a `.env` file in the root directory.
 
@@ -109,4 +109,52 @@ Add the following variables:
 LLM_API_KEY=your_gemini_api_key
 LLM_MODEL_NAME=gemini-1.5-flash  # Or your desired model name
 ```
+Replace your_gemini_api_key with your actual Gemini API key obtained from AI Studio.
 
+### 5. Configure Database Settings
+
+In `settings.py`, update the `DATABASES` configuration with your PostgreSQL credentials.
+
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'patient_chat_db',
+        'USER': 'patient',
+        'PASSWORD': 'dtxplus2024',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",} } }
+```
+
+### 6. Configure Neo4j Settings
+
+In `neo4j_driver.py`, update the Neo4j connection details.
+
+```bash
+self.driver = GraphDatabase.driver(
+    "bolt://localhost:7687", auth=("neo4j", "your_neo4j_password")
+)
+```
+
+### 7. Run Migrations
+
+```bash
+python patient_chat/manage.py makemigrations
+python patient_chat/manage.py migrate
+```
+
+## 8. Populate the Database
+
+Use the Django admin panel or create a script to add the patient data to the database. Ensure there is at least one Patient entry in the database.
+
+# Running the Application
+
+1. **Start the Django Development Server**
+   ```bash
+   python manage.py runserver
+   ```
+
+## 2. Access the Application
+Open your web browser and navigate to [http://localhost:8000/](http://localhost:8000/).
